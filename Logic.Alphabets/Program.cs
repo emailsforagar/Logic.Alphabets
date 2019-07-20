@@ -20,7 +20,6 @@ namespace Logic.Alphabets
 
         static long GetNumber(string strVal)
         {
-            int letter_count = 26;
             long result = 0;
             int iterator = 0;
            Array charArray = new char[26] { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
@@ -28,7 +27,7 @@ namespace Logic.Alphabets
             char[] charVal = strVal.ToCharArray();
             foreach (char c in charVal)
             {
-                result = Array.IndexOf(charArray, c, 0)+1  + result * (iterator * letter_count);
+                result = Array.IndexOf(charArray, c, 0)+1  + result * (iterator * charArray.Length);
                 iterator++;
             }
             return result;
